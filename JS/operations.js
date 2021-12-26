@@ -329,6 +329,31 @@ function clearInput() {
     }
 }
 
+function clearInput2() {
+    let A = getMatrix();
+    let B = getMatrix2();
+    console.log(B);
+    let trs = A.length;
+    let n = B.length;
+    let a = A[0].length;
+    let b = B[0].length;
+    for (let i = 0; i<trs; i++) {
+        for (let j = 0; j<a; j++) {
+            buf = document.getElementById(`a${i}_${j}`);
+            buf.value = "0";
+        }
+    }
+    for (let i = 0; i<n; i++) {
+        for (let j = 0; j<b; j++) {
+            buf = document.getElementById(`b${i}_${j}`);
+            buf.value = '0';
+        }
+    }
+    let str = document.getElementById('result2');
+    str.innerHTML = ``;
+}
+
+
 function getMatrix () {
     let t = document.getElementById ('matrixOne');
     let trs =  t.getElementsByTagName ('tr').length;
@@ -336,7 +361,10 @@ function getMatrix () {
     let matrix1 = [];
     let row = [];
     for (let i = 0; i<trs; i++) { 
-        for (let j = 0; j<(tds/trs); j++) {row[j] = parseInt(document.getElementById(`n${i}_${j}`).value)};
+        for (let j = 0; j<(tds/trs); j++) {
+            row[j] = document.getElementById(`a${i}_${j}`).value;
+            row[j] = parseInt(row[j]);
+        }
         matrix1[i] = row;
         row=[];
     }
@@ -349,28 +377,100 @@ function getMatrix2 () {
     let matrix2 = [];
     let row2 = [];
     for (let i = 0; i<trs2; i++) { 
-        for (let j = 0; j<(tds2/trs2); j++) {row2[j] = parseInt(document.getElementById(`n${i}_${j}`).value)};
+        for (let j = 0; j<(tds2/trs2); j++) {
+            row2[j] = document.getElementById(`b${i}_${j}`).value;
+            row2[j] = parseInt(row2[j]);
+        }
         matrix2[i] = row2;
         row2=[];
     }
-
+    console.log(matrix2)
     return matrix2;
+    
 }
 
-function Matrix() {
-    let cols = document.getElementsByTagName ('tr').length;
-    let rows = document.getElementById('rows').value;
-    
-    function rowscalc (i, r) {
-        for (let k = 1, z = ''; k <= r; k++) {  
-            z += '<td style="width: 50px;">' + i +','+ k + '</td>';} 
-        return z;
+function SumMatrix() {
+    let matrix1 = getMatrix();
+    let matrix2 = getMatrix2();
+
+    let m = matrix1.length;
+    let n = matrix1[0].length;
+    let C = [];
+    for (let i = 0; i < m; i++) {
+        C[i]=[];
+        for (let j=0; j<n;j++) {
+            C[i][j] = matrix1[i][j]+matrix2[i][j];
         }
-}
-    function go() {
-    document.write ('<table border="1", cellpadding="0", cellspacing="0">');
-    for (let i = 1; i <= cols; i++)    {
-        document.write ('<tr>' + rowscalc (i, rows) + '</tr>');
     }
-    document.write ('</table>');
+
+    let table = document.getElementById('result2');
+
+    fillTable(table, C);
+
+    function fillTable(table, A) {
+        for (let i = 0; i < A.length; i++) {
+            let tr = document.createElement('tr');
+            for (let j = 0; j < A[i].length; j++) { 
+                let td = document.createElement('td');
+                td.innerHTML = A[i][j];
+                td.setAttribute('class', "calc__cell")
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+    }
+}
+
+function minusMatrix () {
+    let matrix1 = getMatrix();
+    let matrix2 = getMatrix2();
+
+    let m = matrix1.length;
+    let n = matrix1[0].length;
+    let C = [];
+    for (let i = 0; i < m; i++) {
+        C[i]=[];
+        for (let j=0; j<n;j++) {
+            C[i][j] = matrix1[i][j]-matrix2[i][j];
+        }
+    }
+
+    let table = document.getElementById('result2');
+
+    fillTable(table, C);
+
+    function fillTable(table, A) {
+        for (let i = 0; i < A.length; i++) {
+            let tr = document.createElement('tr');
+            for (let j = 0; j < A[i].length; j++) { 
+                let td = document.createElement('td');
+                td.innerHTML = A[i][j];
+                td.setAttribute('class', "calc__cell")
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+    }
+}
+
+function multiplexor() {
+    let matrix1 = getMatrix();
+    let matrix2 = getMatrix2();
+
+    let C = multiMatrix(matrix1, matrix2);
+    let table = document.getElementById('result2');
+    fillTable(table, C);
+
+    function fillTable(table, A) {
+        for (let i = 0; i < A.length; i++) {
+            let tr = document.createElement('tr');
+            for (let j = 0; j < A[i].length; j++) { 
+                let td = document.createElement('td');
+                td.innerHTML = A[i][j];
+                td.setAttribute('class', "calc__cell")
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+    }
 }

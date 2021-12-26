@@ -1,19 +1,53 @@
+body {
+    background: url(/img/intro.jpeg) center no-repeat;
+    text-align: center;
+}
+
 .container {
     height: 100%;
     max-width: 1350px;
-    
 }
 
+.tumblr {
+    width: 800px;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__title {
+        color: #fff;
+        font-size: 60px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__button {
+        font-size: 50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 5%;
+    }
+
+    &__button:hover {
+        background-color: #fce38b;
+        border: 1px solid #fce38a;
+    }
+}
 
 .calc {
-    display: none;
     font-family: 'Montserrat', sans-serif;
     display:flex;
     justify-content:center;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: url(/img/intro.jpeg) center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 
@@ -140,5 +174,9 @@
     }
 }
 .first {
-  //  display: none;
+    display: none;
+}
+
+.second {
+    display: none;
 }

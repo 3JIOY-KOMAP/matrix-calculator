@@ -9,11 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css"> 
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="JS/styles.js"></script>
     <script src="JS/matrix.js"></script>
     <script src="JS/operations.js"></script>
     <script src="JS/matrixDouble.js"></script>
 </head>
 <body id="body">
+    <div class="tumblr">
+        <p class="tumblr__title">Количество матриц</p>
+        <row class="tumblr__row">
+            <button class="tumblr__button" onclick="oneMatrix()">1</button>
+            <button class="tumblr__button" onclick="twoMatrix()">2</button>
+        </row>
+    </div>
     <div class="calc first">
     <div class="container">
         <div class="calc__body">
@@ -91,12 +99,12 @@
                     <div class="calc__matr">
                         <table class="calc__matrix" id="matrixOne" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td><input class="calc__cell" name="n0_0" id="n0_0" value = "0"></td>
-                                <td><input class="calc__cell" name="n0_1" id="n0_1" value = "0"></td>
+                                <td><input class="calc__cell" name="a0_0" id="a0_0" value = "0"></td>
+                                <td><input class="calc__cell" name="a0_1" id="a0_1" value = "0"></td>
                             </tr>
                             <tr>
-                                <td><input class="calc__cell" name="n1_0" id="n1_0" value = "0"></td>
-                                <td><input class="calc__cell" name="n1_1" id="n1_1" value = "0"></td>
+                                <td><input class="calc__cell" name="a1_0" id="a1_0" value = "0"></td>
+                                <td><input class="calc__cell" name="a1_1" id="a1_1" value = "0"></td>
                             </tr>
                         </table>
                     </div>
@@ -106,9 +114,9 @@
                 <div class="calc__buttons">
                     <div class="calc__operations">
                         <button class="calc__button" onclick="SumMatrix()">Сложить</button>
-                        <button class="calc__button" onclick="#">Умножить</button>
-                        <button class="calc__button" onclick="#">Вычесть</button>
-                        <button class="calc__button" onclick="clearInput()">Очистка таблиц</button>       
+                        <button class="calc__button" onclick="multiplexor()">Умножить</button>
+                        <button class="calc__button" onclick="minusMatrix()">Вычесть</button>
+                        <button class="calc__button" onclick="clearInput2()">Очистка таблиц</button>       
                     </div>
             </div>
             </div> 
@@ -121,14 +129,14 @@
                         <button class="calc__button" onclick="delcolTwo()">Убрать столбец</button>
                     </div>
                     <div class="calc__matr">
-                        <table class="calc__matrix" id="matrixTwo" cellspacing="0" cellpadding="0">
+                        <table class="calc__matrix" id="matrixTwo" cellspacing="0" cellpaddingb="0">
                             <tr>
-                                <td><input name="r0_0" class="calc__cell" id="r0_0" value = "0"></input></td>
-                                <td><input name="r0_1" class="calc__cell" id="r0_1" value = "0"></input></td>
+                                <td><input name="b0_0" class="calc__cell" id="b0_0" value = "0"></input></td>
+                                <td><input name="b0_1" class="calc__cell" id="b0_1" value = "0"></input></td>
                             </tr>
                             <tr>
-                                <td><input name="r1_0" class="calc__cell" id="r1_0" value = "0"></input></td>
-                                <td><input name="r1_1" class="calc__cell" id="r1_1" value = "0"></input></td>
+                                <td><input name="b1_0" class="calc__cell" id="b1_0" value = "0"></input></td>
+                                <td><input name="b1_1" class="calc__cell" id="b1_1" value = "0"></input></td>
                             </tr>
                         </table>
                     </div>
@@ -138,15 +146,15 @@
         <div class="calc__center">
             <div class="calc__result">
                 <p class="calc__string">Результат:</p>
-                <table class="calc__result" id="result" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td><p class="calc__cell" id="s0_0"></p></td>
-                        <!-- <td><p class="calc__cell" id="s0_1"></p></td> -->
-                    </tr>
+                <table class="calc__result" id="result2" cellspacing="0" cellpadding="0">
                     <!-- <tr>
+                        <td><p class="calc__cell" id="c0_0"></p></td>
+                        <td><p class="calc__cell" id="s0_1"></p></td> 
+                    </tr>
+                    <tr>
                         <td><p class="calc__cell" id="s1_0"></p></td>
                         <td><p class="calc__cell" id="s1_1"></p></td>
-                    </tr> -->
+                    </tr> --> 
                 </table>
             </div>
         </div>
