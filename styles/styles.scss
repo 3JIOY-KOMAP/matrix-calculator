@@ -1,0 +1,144 @@
+.container {
+    height: 100%;
+    max-width: 1350px;
+    
+}
+
+
+.calc {
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(/img/intro.jpeg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    &__body {
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1;
+        color: #fff;
+        margin-bottom: 40px;
+    }
+    &__text {
+        margin: auto;
+        width: 600px;
+        height: 60px;
+        text-align: center;
+        background-color: #fce38b;
+        border: 1px solid #fce38a;
+        padding-top: 20px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &__settings {
+        margin: auto;
+        display: flex; 
+        margin-bottom: 15px;       
+    }
+    &__functions {
+        width: 200px;
+        height: 80px;
+    }
+
+    &__matrix {
+        
+    }
+
+    &__buttons {
+        align-items: center;
+        
+    }
+
+    &__button {
+        width: 150px;
+        height: 80px;
+        background-color: #fce40b;
+        border: 1px solid #fce38a;
+        
+    }
+
+    &__button:hover {
+        background-color: #fce38a;
+    }
+
+    &__operations {
+        margin: auto;
+        display: flex;
+        flex-wrap:wrap;
+        font-size: 16px;
+        max-width: 600px;
+    }
+
+    &__matrix {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__string {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    &__cell {
+        text-align: center;
+        vertical-align: middle;
+        background-color: #fff;
+        width: 80px;
+        height: 25px;
+        border: 1px solid black;
+    }
+
+    &__center {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__result {
+        
+    }
+
+    &__cards {
+        display: flex;
+    }
+    &__card {
+        align-items: center;
+    }
+    
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+    &__header {
+        padding-top: 20px;
+        width: 150px;
+        height: 80px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        background-color: #fce40b;
+        border: 1px solid #fce38a;
+        text-align: center;
+        
+    }
+}
+.first {
+  //  display: none;
+}
