@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <script src="JS/styles.js"></script>
     <script src="JS/matrix.js"></script>
-    <script src="JS/operations.js"></script>
+    
     <script src="JS/matrixDouble.js"></script>
 </head>
 <body id="body">
@@ -66,19 +66,13 @@
                 <tr>
                 <td>
                     <table class="calc__result" id="result" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td><p class="calc__cell" id="r0_0"></p></td>
-                            <td><p class="calc__cell" id="r0_1"></p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="calc__cell" id="r1_0"></p></td>
-                            <td><p class="calc__cell" id="r1_1"></p></td>
-                        </tr>
+                        
                     </table>
                 </td>
                 </tr>
             </table> 
-            <button class="calc__button" onclick="clearInput()">Очистка таблиц</button>       
+            <button class="calc__button" onclick="clearInput()">Очистка</button>       
+            <button class="calc__button" onclick="back()">Вернуться</button>      
         </div>
     </div>
 </div>
@@ -117,6 +111,7 @@
                         <button class="calc__button" onclick="multiplexor()">Умножить</button>
                         <button class="calc__button" onclick="minusMatrix()">Вычесть</button>
                         <button class="calc__button" onclick="clearInput2()">Очистка таблиц</button>       
+                        <button class="calc__button" onclick="back()">Вернуться</button>    
                     </div>
             </div>
             </div> 
@@ -147,20 +142,13 @@
             <div class="calc__result">
                 <p class="calc__string">Результат:</p>
                 <table class="calc__result" id="result2" cellspacing="0" cellpadding="0">
-                    <!-- <tr>
-                        <td><p class="calc__cell" id="c0_0"></p></td>
-                        <td><p class="calc__cell" id="s0_1"></p></td> 
-                    </tr>
-                    <tr>
-                        <td><p class="calc__cell" id="s1_0"></p></td>
-                        <td><p class="calc__cell" id="s1_1"></p></td>
-                    </tr> --> 
+                    
                 </table>
             </div>
         </div>
     </div>
 </div>
 
-
+<script src="JS/operations.js"></script>
 </body>
 </html>
