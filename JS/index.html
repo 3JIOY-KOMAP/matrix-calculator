@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matrixCalculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="JS/styles.js"></script>
+    <script src="JS/matrix.js"></script>
+    
+    <script src="JS/matrixDouble.js"></script>
+</head>
+<body id="body">
+    <div class="tumblr">
+        <p class="tumblr__title">Количество матриц</p>
+        <row class="tumblr__row">
+            <button class="tumblr__button" onclick="oneMatrix()">1</button>
+            <button class="tumblr__button" onclick="twoMatrix()">2</button>
+        </row>
+    </div>
+    <div class="calc first">
+    <div class="container">
+        <div class="calc__body">
+        <h1 class="calc__title">Операции с 1 матрицей</h1>
+            <div class="calc__buttons">
+                    <p class="calc__text">Настройки матрицы</p>
+                    <div class="calc__settings">
+                        <button class="calc__button" onclick="plusRow()">Добавить строку</button>
+                        <button class="calc__button" onclick="delRow()">Убрать строку</button>
+                        <button class="calc__button" onclick="plusCol()">Добавить столбец</button>
+                        <button class="calc__button" onclick="delCol()">Убрать столбец</button>
+                    </div>
+                    <p class="calc__text">Операции</p>
+                    <div class="calc__operations">
+                        <button class="calc__button" onclick="trans()">Транспонирование</button>
+                        <button class="calc__button" onclick="sumWithNum()">Прибавить число</button>
+                        <button class="calc__button" onclick="multiWithNum()">Умножить на число</button>
+                        <button class="calc__button" onclick="subNum()">Вычесть число</button>
+                        <button class="calc__button" onclick="getInverse()">Найти обратную</button>
+                        <button class="calc__button" onclick="getDet()">Найти определитель</button>
+                        <button class="calc__button" onclick="pow()">Возвести в степень</button>
+                        <button class="calc__button" onclick="Rank()">Найти Ранг</button>
+                    </div>
+            </div>
+            <table>
+                <tr class="calc__matrix">
+                <tr><td><p class="calc__string">Матрица:</p></td></tr>
+                <td>
+                    <table class="calc__matrix" id="table" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td><input class="calc__cell" name="n0_0" id="n0_0" value = "0"></td>
+                            <td><input class="calc__cell" name="n0_1" id="n0_1" value = "0"></td>
+                        </tr>
+                        <tr>
+                            <td><input class="calc__cell" name="n1_0" id="n1_0" value = "0"></td>
+                            <td><input class="calc__cell" name="n1_1" id="n1_1" value = "0"></td>
+                        </tr>
+                    </table>
+                </td>
+                </tr>
+                <tr><td><p class="calc__string">Результат:</p></td></tr>
+                <tr>
+                <td>
+                    <table class="calc__result" id="result" cellspacing="0" cellpadding="0">
+                        
+                    </table>
+                </td>
+                </tr>
+            </table> 
+            <button class="calc__button" onclick="clearInput()">Очистка</button>       
+            <button class="calc__button" onclick="back()">Вернуться</button>      
+        </div>
+    </div>
+</div>
+<div class="calc second">
+    <div class="container">
+        <div class="calc__body">
+        <h1 class="calc__title">Операции с несколькими матрицами</h1>
+            
+        <div class="calc__cards">
+            <div class="card">
+                <p class="calc__text">Настройки матрицы</p>
+                    <div class="calc__settings">
+                        <button class="calc__button" onclick="plusrow()">Добавить строку</button>
+                        <button class="calc__button" onclick="delrow()">Убрать строку</button>
+                        <button class="calc__button" onclick="pluscol()">Добавить столбец</button>
+                        <button class="calc__button" onclick="delcol()">Убрать столбец</button>
+                    </div>
+                    <div class="calc__matr">
+                        <table class="calc__matrix" id="matrixOne" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td><input class="calc__cell" name="a0_0" id="a0_0" value = "0"></td>
+                                <td><input class="calc__cell" name="a0_1" id="a0_1" value = "0"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="calc__cell" name="a1_0" id="a1_0" value = "0"></td>
+                                <td><input class="calc__cell" name="a1_1" id="a1_1" value = "0"></td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>   
+            <div class="card calc__items">
+                <p class="calc__header">Операции</p>
+                <div class="calc__buttons">
+                    <div class="calc__operations">
+                        <button class="calc__button" onclick="SumMatrix()">Сложить</button>
+                        <button class="calc__button" onclick="multiplexor()">Умножить</button>
+                        <button class="calc__button" onclick="minusMatrix()">Вычесть</button>
+                        <button class="calc__button" onclick="clearInput2()">Очистка таблиц</button>       
+                        <button class="calc__button" onclick="back()">Вернуться</button>    
+                    </div>
+            </div>
+            </div> 
+            <div class="card">
+                <p class="calc__text">Настройки матрицы</p>
+                    <div class="calc__settings">
+                        <button class="calc__button" onclick="plusrowTwo()">Добавить строку</button>
+                        <button class="calc__button" onclick="delrowTwo()">Убрать строку</button>
+                        <button class="calc__button" onclick="pluscolTwo()">Добавить столбец</button>
+                        <button class="calc__button" onclick="delcolTwo()">Убрать столбец</button>
+                    </div>
+                    <div class="calc__matr">
+                        <table class="calc__matrix" id="matrixTwo" cellspacing="0" cellpaddingb="0">
+                            <tr>
+                                <td><input name="b0_0" class="calc__cell" id="b0_0" value = "0"></input></td>
+                                <td><input name="b0_1" class="calc__cell" id="b0_1" value = "0"></input></td>
+                            </tr>
+                            <tr>
+                                <td><input name="b1_0" class="calc__cell" id="b1_0" value = "0"></input></td>
+                                <td><input name="b1_1" class="calc__cell" id="b1_1" value = "0"></input></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="calc__center">
+            <div class="calc__result">
+                <p class="calc__string">Результат:</p>
+                <table class="calc__result" id="result2" cellspacing="0" cellpadding="0">
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="JS/operations.js"></script>
+</body>
+</html>
